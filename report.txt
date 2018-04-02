@@ -1,1 +1,2 @@
-# Init
+#<Ngày 1><Ngày 2 Tháng 4 Năm 2018>
+- Authentication with Redux and Firebase
