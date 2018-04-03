@@ -4,8 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 export default class HelloWorld extends Component {
     render() {
         return(
-            <View>
-                <Text>Hello World!</Text>
+            <View style={styles.container}>
+                <Text style={styles.textStyle}>Hello World!</Text>
             </View>
         )
     }
@@ -19,6 +19,6 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         fontSize: 30,
-        fontWeight: 'italic'
+        fontWeight: 'bold'
     }
 })
