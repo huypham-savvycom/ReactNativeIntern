@@ -1,0 +1,5 @@
+ngay 1 : 3/4/2018
+  hello world
+  
+ngay 2 : 4/4/2018
+  estimate time to complete screen
