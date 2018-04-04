@@ -2,7 +2,9 @@ import React, { PureComponent } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import { color } from '../../ultils/constants/color';
 import { styles } from './style';
+import { CustomTextInput } from '../../components';
 const { height, width } = Dimensions.get('screen');
+
 export default class Login extends PureComponent {
     render() {
         return (
@@ -14,26 +16,16 @@ export default class Login extends PureComponent {
                     />
                 </View>
                 <View style={styles.main_layout}>
-                    <TextInput
-                        placeholder='Email'
-                        placeholderTextColor='#fff'
-                        underlineColorAndroid='#fff'
-                        style={styles.text_input}
-                    />
-                    <TextInput
-                        placeholder='Password'
-                        placeholderTextColor='#fff'
-                        underlineColorAndroid='#fff'
-                        style={styles.text_input}
-                    />
+                    <CustomTextInput label='Email' />
+                    <CustomTextInput label='Password' type='password' />
                     <View style={styles.button_layout}>
                         <TouchableOpacity style={styles.button_login}>
                             <Text style={styles.text_login}>LOGIN</Text>
                         </TouchableOpacity>
                     </View>
                     <TouchableOpacity style={styles.sign_up_button}>
-                        <Text style={}>Sign-up</Text>
-                    </TouchableOpacity> 
+                        <Text style={styles.sign_up_text}>Sign-up</Text>
+                    </TouchableOpacity>
                 </ View>
                 <View style={{ flex: 1.65 }}></View>
             </ View >

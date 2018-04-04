@@ -1,5 +1,6 @@
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import Login from './screens/Login/Login';
+import SignUp from './screens/SignUp/SignUp';
 // const MainNavigator = TabNavigator({
 
 // }, {
@@ -17,7 +18,9 @@ import Login from './screens/Login/Login';
 //     });
 
 const RootNavigator = StackNavigator({
-    Login: { screen: Login },
+    SignUp: { screen: SignUp },
+    Login: { screen: Login },   
+
 },
     {
         headerMode: 'none',

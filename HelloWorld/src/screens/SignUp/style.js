@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         alignItems: 'center'
     },
     image_layout: {
-        flex: 4.72,
+        flex: 3.56,
         width,
         alignItems: 'center'
     },
@@ -20,9 +20,14 @@ export const styles = StyleSheet.create({
         marginTop: height * 0.142
     },
     main_layout: {
-        flex: 3.63,
+        flex: 5.23,
         width: '88%',
         height: '36.3%'
+    },
+    text_input: {
+        flex: 1,
+        padding: 0,
+        color: '#fff'
     },
     button_layout: {
         flex: 1,
@@ -40,7 +45,7 @@ export const styles = StyleSheet.create({
     },
     text_login: {
         color: color.paleTeal,
-        fontSize: 21
+        fontSize: height * 0.025
     },
     sign_up_button: {
         width: '100%',
@@ -48,6 +53,11 @@ export const styles = StyleSheet.create({
     },
     sign_up_text: {
         color: '#fff',
-        fontSize: 21
+        fontSize: height * 0.02
+    },
+    return: {
+        flex: 1.21,
+        justifyContent: 'center',
+        alignItems: 'center'
     }
 });
