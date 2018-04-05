@@ -1,5 +1,8 @@
 Init
-<'ngay 1'><'4/3/2018'>
+<'ngay 1'><'2/4/2018'>
 hello world!!
-<'ngày 2'><'6/3/2018'>
+<'ngày 2'><'3/4/2018'>
+nguyên cứu về  "best practice react native", Do's and Don'ts when development app
+<'ngày 3'><'4/4/2018'>
 hoàn thành bài tập về nhà giáo viên giao!!!
+<'ngày 4'><'5/4/2018'>
