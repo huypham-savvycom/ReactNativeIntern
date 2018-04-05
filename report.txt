@@ -1,6 +1,6 @@
-Báo cáo công việc hàng ngày
+﻿Báo cáo công việc hàng ngày - Lưu Chí Nghĩa - 01676215038 - Skype: lcnghia108 - Email: lcnghia108@gmail.com
 
-Ngày 1: 3-4-2018: Cài đặt môi trường. Tạo chương trình Hello world.
+Ngày 1: 3-4-2018: Cài đặt môi trường. Tạo chương trình Hello world và tìm hiểu cơ bản về react native. 
 
-Ngày 2: Làm bài tập: Convert 5 source code from your favorite programing languages (C/C++/Java...) to Javascript
+Ngày 2: 5-4-2018: Làm bài tập: Convert 5 source code from your favorite programing languages (C/C++/Java...) to Javascript
 
