@@ -1,0 +1,6 @@
+Báo cáo công việc hàng ngày
+
+Ngày 1: 3-4-2018: Cài đặt môi trường. Tạo chương trình Hello world.
+
+Ngày 2: Làm bài tập: Convert 5 source code from your favorite programing languages (C/C++/Java...) to Javascript
+
