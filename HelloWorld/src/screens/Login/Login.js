@@ -4,6 +4,9 @@ import { styles } from './style';
 import { CustomTextInput } from '../../components';
 
 export default class Login extends PureComponent {
+    onLogin = () => {
+        this.props.navigation.navigate('Main');
+    }
     render() {
         return (
             <View style={styles.container} >
@@ -17,7 +20,7 @@ export default class Login extends PureComponent {
                     <CustomTextInput label='Email' />
                     <CustomTextInput label='Password' type='password' />
                     <View style={styles.button_layout}>
-                        <TouchableOpacity style={styles.button_login}>
+                        <TouchableOpacity style={styles.button_login} onPress={this.onLogin}>
                             <Text style={styles.text_login}>LOGIN</Text>
                         </TouchableOpacity>
                     </View>

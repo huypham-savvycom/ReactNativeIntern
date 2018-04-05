@@ -12,7 +12,7 @@ export default class Welcome extends PureComponent {
         return (
             <View style={styles.container} >
                 <View style={styles.welcome_layout}>
-                    <Text style={{ color: '#fff', fontSize: 26 }}>Welcome to</Text>
+                    <Text style={{ color: '#fff', fontSize: 26, fontFamily: 'HelveticaNeue Thin' }}>Welcome to</Text>
                 </View>
                 <View style={{ flex: 4.8 }}>
                     <Image

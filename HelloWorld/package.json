@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "16.3.0-alpha.1",
     "react-native": "0.54.4",
+    "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^1.5.9",
     "react-navigation-redux-helpers": "^1.0.3",
     "react-redux": "^5.0.7",
@@ -24,5 +25,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./src/ultils/fonts"
+    ]
   }
 }

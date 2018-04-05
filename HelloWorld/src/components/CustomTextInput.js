@@ -50,7 +50,7 @@ class CustomTextInput extends PureComponent {
                     underlineColorAndroid='#fff'
                     placeholder={isForcus ? '' : placeholder}
                     placeholderTextColor='#fff'
-                    onChangeText={text => this.setState({ text })}
+                    onChangeText={textChange => this.setState({ text: textChange })}
                     onFocus={() => this.setState({ isForcus: true })}
                     onBlur={() => this.setState({ isForcus: false })}
                     value={text}
