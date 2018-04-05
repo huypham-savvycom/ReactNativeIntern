@@ -4,19 +4,37 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Platform,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import Login from './src/screens/Login';
+import SignUp from './src/screens/SignUp';
+import Welcome from './src/screens/Welcome';
 
-export default class App extends Component{
-  render() {
-    return (
-      <View></View>
-    );
-  }
-}
+import {
+  LoginScreen, SignUpScreen, WelcomeScreen
+} from './Screens';
 
+const App = StackNavigator({    
+    LoginScreen: {
+        screen: Login,
+        navigationOptions: {
+          header: null
+        }
+    },
+    SignUpScreen: {
+        screen: SignUp,
+        navigationOptions: {
+          header: null
+        }
+    }
+},{
+  mode: 'modal'
+});
+
+export default App;

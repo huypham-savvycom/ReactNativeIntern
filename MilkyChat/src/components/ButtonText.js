@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-const ButtonText = ({text}) => {
+const ButtonText = ({text, ...props}) => {
     return(
-        <TouchableOpacity>
+        <TouchableOpacity {...props}>
             <View style={styles.container}>
                 <Text style={styles.textStyle}>{text}</Text>
             </View>
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         color: '#FFFFFF',
-        fontSize: 15
+        fontSize: 15,
+        fontWeight: '600'
     }
 })
 

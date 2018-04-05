@@ -8,3 +8,7 @@
 #<Ngay3><T4/4/4/2018>
 - Finish homework
 - Finish Login screen of MilkyChat
+
+#<Ngay4><T5/5/5/2018>
+- Finish SignUp screen of MilkyChat
+- Added navigation between these two screens

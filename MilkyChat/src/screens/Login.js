@@ -13,6 +13,8 @@ import Logo from "../components/Logo";
 import TextInputFloat from "../components/TextInputFloat";
 import Button from '../components/Button';
 import ButtonText from "../components/ButtonText";
+import {SignUpScreen, WelcomeScreen} from '../../Screens';
+import SignUp from './SignUp'
 
 const { height, width } = Dimensions.get("window");
 
@@ -28,8 +30,12 @@ export default class Login extends Component {
             <View style={{paddingTop: 20}}>
                 <TextInputFloat label="Password" secureTextEntry={true} />
             </View>
-            <View style={{paddingTop: 40}}><Button text='LOGIN'/></View>
-            <View style={{paddingTop: 40}}><ButtonText text='Sign-up'/></View>
+            <View style={{paddingTop: 40}}>
+              <Button text='LOGIN'/>
+            </View>
+            <View style={{paddingTop: 40}}>
+              <ButtonText text='Sign-up' onPress={() => {this.props.navigation.navigate(SignUpScreen)}}/>
+            </View>
         </View>
       </TouchableWithoutFeedback>
     );
