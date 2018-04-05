@@ -29,10 +29,11 @@ class CustomTextInput extends PureComponent {
         const textStyle = {
             position: 'absolute',
             left: 3,
+            top: placeholder === undefined ? 15 : 0,
             transform: [{
                 translateY: animation.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0, -height * 0.05],
+                    outputRange: [0, placeholder === undefined ? -20 : -height * 0.03],
                 })
             }],
             opacity: animation.interpolate({
@@ -41,15 +42,15 @@ class CustomTextInput extends PureComponent {
             })
         };
         return (
-            <View style={[{ height: height * 0.08, justifyContent: 'flex-end' }, style]} >
-                <Animated.View style={textStyle}  >
+            <View style={[{ height: placeholder === undefined ? 70 : height * 0.08 }, style]} >
+                <Animated.View style={textStyle} >
                     <Text style={{ color: '#fff' }}>{label}</Text>
                 </Animated.View>
                 <TextInput
                     underlineColorAndroid='#fff'
                     placeholder={isForcus ? '' : placeholder}
                     placeholderTextColor='#fff'
-                    onChangeText={(text) => this.setState({ text })}
+                    onChangeText={text => this.setState({ text })}
                     onFocus={() => this.setState({ isForcus: true })}
                     onBlur={() => this.setState({ isForcus: false })}
                     value={text}
@@ -58,7 +59,7 @@ class CustomTextInput extends PureComponent {
                         paddingLeft: 3,
                         marginBottom: placeholder === undefined ? '10%' : 0,
                         color: '#fff',
-                        height: height * 0.05
+                        height: placeholder === undefined ? 50 : height * 0.05
                     }, textInputStyle]}
                     secureTextEntry={type === undefined ? false : true}
                 />

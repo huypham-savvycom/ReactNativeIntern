@@ -9,24 +9,13 @@ export const styles = StyleSheet.create({
         backgroundColor: color.paleTeal,
         alignItems: 'center'
     },
-    image_layout: {
-        flex: 4.72,
-        width,
-        alignItems: 'center'
-    },
     logo: {
         width: 243,
         height: 62,
-        marginTop: height * 0.142
-    },
-    main_layout: {
-        flex: 3.63,
-        width: '88%',
-        height: '36.3%'
+        alignSelf: 'center'
     },
     button_layout: {
-        flex: 1,
-        justifyContent: 'center',
+        flex: 2.2,
         alignItems: 'center',
         width: '100%'
     },
@@ -36,18 +25,19 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
         height: 50,
         borderRadius: 25,
-        width: '100%'
+        width: '56%'
+
+    },
+    text: {
+        color: '#fff', alignSelf: 'flex-end'
     },
     text_login: {
         color: color.paleTeal,
-        fontSize: height * 0.025
+        fontSize: 21
     },
-    sign_up_button: {
-        width: '100%',
+    welcome_layout: {
+        flex: 3,
+        justifyContent: 'center',
         alignItems: 'center'
-    },
-    sign_up_text: {
-        color: '#fff',
-        fontSize: height * 0.025
     }
 });

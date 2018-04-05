@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
-import { View, Image, Text, TextInput, TouchableOpacity, Dimensions } from 'react-native';
-import { color } from '../../ultils/constants/color';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { styles } from './style';
 import { CustomTextInput } from '../../components';
-const { height, width } = Dimensions.get('screen');
 
 export default class Login extends PureComponent {
     render() {
@@ -23,11 +21,11 @@ export default class Login extends PureComponent {
                             <Text style={styles.text_login}>LOGIN</Text>
                         </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={styles.sign_up_button}>
+                    <TouchableOpacity style={styles.sign_up_button} onPress={() => this.props.navigation.navigate('SignUp')}>
                         <Text style={styles.sign_up_text}>Sign-up</Text>
                     </TouchableOpacity>
                 </ View>
-                <View style={{ flex: 1.65 }}></View>
+                <View style={{ flex: 1.65 }} />
             </ View >
         );
     }

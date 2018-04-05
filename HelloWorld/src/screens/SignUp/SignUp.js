@@ -1,8 +1,12 @@
 import React, { PureComponent } from 'react';
-import { View, Image, Text, TextInput, TouchableOpacity, Switch } from 'react-native';
+import { View, Image, Text, TouchableOpacity, Switch, Dimensions } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 import { color } from '../../ultils/constants/color';
 import { styles } from './style';
 import { CustomTextInput } from '../../components';
+
+const { height } = Dimensions.get('screen');
+
 export default class Login extends PureComponent {
     state = {
         switchValue: true
@@ -32,10 +36,10 @@ export default class Login extends PureComponent {
                             label={switchValue ? 'Educator' : 'Caregiver'}
                             style={{ flex: 1 }}
                         />
-                        <View style={{ alignSelf: 'center', backgroundColor: '#fff', height: 24, borderRadius: 12, justifyContent: 'center', alignItems: 'center' }}>
+                        <View style={{ backgroundColor: '#fff', height: 24, borderRadius: 12, justifyContent: 'center', alignItems: 'center' }}>
                             <Switch
                                 onValueChange={(value) => {
-                                    this.setState({ switchValue: value })
+                                    this.setState({ switchValue: value });
                                     console.log(value);
                                 }}
                                 value={switchValue}
@@ -60,7 +64,7 @@ export default class Login extends PureComponent {
                     </View>
                 </ View>
                 <View style={styles.return}>
-                    <TouchableOpacity style={styles.sign_up_button}>
+                    <TouchableOpacity style={styles.sign_up_button} onPress={() => this.props.navigation.dispatch(NavigationActions.back())}>
                         <Text style={styles.sign_up_text}>Return to Login</Text>
                     </TouchableOpacity></View>
             </ View >
