@@ -29,10 +29,14 @@ export default class TextInputs extends Component {
             sliderWidth={28}
             sliderHeight={28}
             sliderRadius={60}
+            borderWidth={0.5}
+            borderColor='#FFFFFF'
             buttonOnColor="#FFFFFF"
-            buttonOffColor="#FFFFFF"
+            buttonOffColor="#89C9C5"
             sliderOnColor="#89C9C5"
-            sliderOffColor="#89C9C5"
+            sliderOffColor="#FFFFFF"
+            borderColor='#FFFFFF'
+            borderWidth={1}
             onToggle={newState => {
               this.setState({ isActivate: newState });
               console.log(`toggle is ${this.state.isActivate ? `on` : `off`}`);

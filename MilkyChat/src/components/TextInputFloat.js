@@ -1,7 +1,14 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Dimensions, Animated, TextInput } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Dimensions,
+  Animated,
+  TextInput,
+} from "react-native";
 
-const { h, w } = Dimensions.get('window');
+const { h, w } = Dimensions.get("window");
 
 export default class TextInputFloat extends Component {
   state = {
@@ -25,7 +32,7 @@ export default class TextInputFloat extends Component {
   render() {
     const { label, ...props } = this.props;
     const labelStyle = {
-      position: 'absolute',
+      position: "absolute",
       left: 0,
       top: this._animatedIsFocused.interpolate({
         inputRange: [0, 1],
@@ -37,20 +44,19 @@ export default class TextInputFloat extends Component {
       }),
       color: this._animatedIsFocused.interpolate({
         inputRange: [0, 1],
-        outputRange: ['#FFFFFF', '#FFFFFF70'],
+        outputRange: ["#FFFFFF", "#FFFFFF70"],
       }),
     };
     return (
-      <View style={{ paddingTop: 18, alignSelf: 'center' }}>
-        <Animated.Text style={labelStyle}>
-          {label}
-        </Animated.Text>
+      <View style={{ paddingTop: 18, alignSelf: "center" }}>
+        <Animated.Text style={labelStyle}>{label}</Animated.Text>
         <TextInput
           {...props}
           style={styles.textInputStyle}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
           blurOnSubmit
+          selectionColor="#FFFFFF"
         />
       </View>
     );
@@ -61,9 +67,9 @@ const styles = StyleSheet.create({
   textInputStyle: {
     height: 26,
     fontSize: 15,
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     borderBottomWidth: 1,
-    borderBottomColor: '#FFFFFF50',
+    borderBottomColor: "#FFFFFF50",
     width: 330,
-  }
-})
+  },
+});

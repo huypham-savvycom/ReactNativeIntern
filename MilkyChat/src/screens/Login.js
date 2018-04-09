@@ -19,6 +19,8 @@ import SignUp from './SignUp'
 const { height, width } = Dimensions.get("window");
 
 export default class Login extends Component {
+
+
   render() {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -28,7 +30,11 @@ export default class Login extends Component {
           </View>
             <TextInputFloat label="Email"/>
             <View style={{paddingTop: 20}}>
-                <TextInputFloat label="Password" secureTextEntry={true} />
+                <TextInputFloat 
+                  label="Password"
+                  secureTextEntry={true} 
+                  // onChangeText={(text) => this.setState({emailInput: text})}
+                  />
             </View>
             <View style={{paddingTop: 40}}>
               <Button text='LOGIN'/>

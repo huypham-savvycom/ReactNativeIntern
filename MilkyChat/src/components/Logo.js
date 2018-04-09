@@ -9,12 +9,12 @@ export default class Logo extends Component {
       <View style={styles.container}>
         <View style={styles.iconUserStyle}>        
         <Image
-          source={require("../assets/icons/iconUser.png")}
+          source={require("../assets/images/iconUser.png")}
         />
         </View>        
         <View style={styles.logoUserStyle}>
         <Image
-          source={require("../assets/icons/logoUser.png")}
+          source={require("../assets/images/logoUser.png")}
         />
         </View>
       </View>
