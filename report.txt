@@ -2,3 +2,5 @@
 #Ngày 2 <Thứ 3/03/04/2018>: Tìm hiểu về những gì nên làm và không nên làm trong khi lập trình React Native
 #Ngày 3 <Thứ 4/04/04/2018>: Làm bài tập thầy giao ở tối thứ 3. ước lượng thời gian làm UI, anh Huy giao
 #Ngày 4 <Thứ 5/05/04/2018>: Làm UI Login, Welcome của App MilkyChat
+#Thứ 6 / 06 / 04 / 2018: Làm Project của a Thành
+#Thứ 2/9/4/2018: Làm tiếp Project của a thành. thêm các giao diện main
