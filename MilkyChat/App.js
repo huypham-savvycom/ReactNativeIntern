@@ -15,9 +15,10 @@ import { StackNavigator } from 'react-navigation';
 import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
 import Welcome from './src/screens/Welcome';
+import Home from './src/screens/Home';
 
 import {
-  LoginScreen, SignUpScreen, WelcomeScreen
+  LoginScreen, SignUpScreen, WelcomeScreen, HomeScreen
 } from './Screens';
 
 const App = StackNavigator({    
@@ -32,7 +33,13 @@ const App = StackNavigator({
         navigationOptions: {
           header: null
         }
-    }
+    },
+    HomeScreen: {
+        screen: Home,
+        navigationOptions: {
+          header: null
+        }
+    },
 },{
   mode: 'modal'
 });
