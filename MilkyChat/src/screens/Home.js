@@ -1,57 +1,61 @@
-import React, { Component } from 'react';
-import {
-    View, Text, StyleSheet
-} from 'react-native';
-import { TabNavigator } from 'react-navigation';
-import HomeScreen from './tabs/HomeScreen';
-import MessageScreen from './tabs/MessageScreen';
-import CameraScreen from './tabs/CameraScreen';
-import NotificationScreen from './tabs/NotificationScreen';
-import PersonalInfoScreen from './tabs/PersonalInfoScreen';
-import Header from '../components/Header';
+import React, { Component } from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { TabNavigator } from "react-navigation";
+import HomeScreen from "./tabs/HomeScreen";
+import MessageScreen from "./tabs/MessageScreen";
+import CameraScreen from "./tabs/CameraScreen";
+import NotificationScreen from "./tabs/NotificationScreen";
+import PersonalInfoScreen from "./tabs/PersonalInfoScreen";
+import Header from "../components/Header";
 
 export default class Home extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Header/>
-                <MainNavigator>
-                    <Text>This is the main screen</Text>
-                </MainNavigator>
-            </View>
-        );
-    }
+  render() {
+    return (
+      <View style={styles.container}>
+        <Header />
+        <MainNavigator>
+          <Text>This is the main screen</Text>
+        </MainNavigator>
+      </View>
+    );
+  }
 }
 
-const MainNavigator = TabNavigator({
+const MainNavigator = TabNavigator(
+  {
     Home: {
-        screen: HomeScreen
+      screen: HomeScreen,
     },
     Message: {
-        screen: MessageScreen
+      screen: MessageScreen,
     },
     Camera: {
-        screen: CameraScreen
+      screen: CameraScreen,
     },
     Notification: {
-        screen: NotificationScreen
+      screen: NotificationScreen,
     },
     PersonalInfo: {
-        screen: PersonalInfoScreen
-    }
-},
-{
+      screen: PersonalInfoScreen,
+    },
+  },
+  {
     swipeEnabled: true,
     animationEnabled: true,
-    tabBarPosition: 'bottom',
+    tabBarPosition: "bottom",
     tabBarOptions: {
-        showLabel: false,
-        showIcon: true,
+      showLabel: false,
+      showIcon: true,
+      style: {
+        backgroundColor: "#FFFFFF",
+        borderTopWidth: 1,
+      },
     },
-})
+  }
+);
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    }
-})
+  container: {
+    flex: 1,
+  },
+});

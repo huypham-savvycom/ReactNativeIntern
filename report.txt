@@ -9,6 +9,10 @@
 - Finish homework
 - Finish Login screen of MilkyChat
 
-#<Ngay4><T5/5/5/2018>
+#<Ngay4><T5/5/4/2018>
 - Finish SignUp screen of MilkyChat
 - Added navigation between these two screens
+
+#<Ngay5><T3/10/4/2018>
+- Finish main screen structure
+- added tab navigator
