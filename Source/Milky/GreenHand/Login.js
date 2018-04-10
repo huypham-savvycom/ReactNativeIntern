@@ -7,18 +7,21 @@ import {
   Image,
   TextInput,
   TouchableHighlight,
-  ActivityIndicator
+  ActivityIndicator,
+  Dimensions,
 } from "react-native";
 import { StackNavigator } from "react-navigation";
 import Icon from "react-native-vector-icons/FontAwesome";
-
+import SignUp from './SignUp';
+const widthDevice = Dimensions.get('window').width;
+const heightDevice = Dimensions.get('window').height;
 export default class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       user: "",
       password: "",
-      isCommit: false
+      isCommit: false,
     };
   }
   login = () => {
@@ -38,7 +41,7 @@ export default class LoginScreen extends Component {
                 },
                 () =>
                   setTimeout(() => {
-                    this.props.isActive(false, false);
+                    this.props.screenName('Main');
                   }, 150)
               );
             } else {
@@ -67,9 +70,13 @@ export default class LoginScreen extends Component {
       password: value
     });
   };
+  loginView = () => {
+    this.refs.loginView.scrollTo({x: 0, y: 0, animated: true})
+  }
   render() {
     return (
-      <ScrollView style={{ flex: 1, width: "99%" }}>
+      <ScrollView style={{ flex: 1 }} pagingEnabled={true} horizontal={true} ref='loginView'>
+        <ScrollView style={{ width: widthDevice, flex: 1}}>
         <View style={styles.container}>
           <View style={styles.vlogo}>
             <Image
@@ -130,7 +137,7 @@ export default class LoginScreen extends Component {
           </Text>
           <TouchableHighlight
             style={{ alignItems: "center", marginBottom: 5, paddingBottom: 10 }}
-            onPress={() => {this.props.navigation.navigate('SignUp')}}
+            onPress={() => {this.refs.loginView.scrollTo({x: widthDevice, y: 0, animated: true})}}
           >
             <Text
               style={{
@@ -143,6 +150,10 @@ export default class LoginScreen extends Component {
             </Text>
           </TouchableHighlight>
         </View>
+        </ScrollView>
+        <View style={{ width: widthDevice, flex: 1}}>
+        <SignUp loginScreen={this.loginView}/>
+        </View>
       </ScrollView>
     );
   }
@@ -152,7 +163,7 @@ const styles = StyleSheet.create({
   container: {
     height: 500,
     backgroundColor: "white",
-    width: "99%",
+    width: widthDevice,
     marginBottom: 10
   },
   vlogo: {

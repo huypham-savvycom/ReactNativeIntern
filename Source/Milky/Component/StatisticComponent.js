@@ -10,7 +10,7 @@ import {
 import { Stacknavigation } from "react-navigation";
 import Icon from "react-native-vector-icons/FontAwesome";
 import HeaderComponent from "./HeaderComponent";
-
+import Statist from './subComponent/statistic';
 export default class StatisticComponent extends Component {
   static navigationOptions = {
     drawerLabel: "Thống kê",
@@ -30,6 +30,9 @@ export default class StatisticComponent extends Component {
         <HeaderComponent {...this.props} title="Thống kê" />
         <View style={styles.container}>
           <Text>Thống kê</Text>
+          <View>
+            <Statist />
+          </View>
         </View>
       </View>
     );
@@ -41,6 +44,5 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: "99%",
     alignItems: "center",
-    justifyContent: "center"
   }
 });

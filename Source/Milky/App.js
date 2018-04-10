@@ -10,10 +10,11 @@ import Login from './GreenHand/Login';
 import SignUp from './GreenHand/SignUp';
 import GreenApp from './GreenHand/App';
 import Main from './GreenHand/Main';
+import Index from './GreenHand/index';
 export default class App extends Component{
   render() {
     return (
-      <Main />
+      <GreenApp />
     );
   }
 }

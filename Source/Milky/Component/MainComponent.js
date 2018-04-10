@@ -25,7 +25,7 @@ export default class MainComponent extends Component {
   componentDidMount() {
     Animated.timing(this.state.marginAnim, {
       toValue: 0,
-      duration: 270,
+      duration: 500,
       easing: Easing.bounce
     }).start();
     const ani1 = Animated.timing(this.state.fadeAnim, {

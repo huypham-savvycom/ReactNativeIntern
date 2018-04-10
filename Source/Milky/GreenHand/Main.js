@@ -53,7 +53,7 @@ const CustomComponent = props => (
     <TouchableOpacity
       style={{ flexDirection: "row", height: 50, width: "100%" }}
       onPress={() => {
-        console.log(props);
+        props.screenProps.screenName('Login');
       }}
     >
       <View style={styles.icon}>
@@ -79,7 +79,7 @@ const CustomComponent = props => (
 let Drawer = DrawerNavigator(
   {
     MainScreen: {
-      screen: MainComponent
+      screen: MainComponent,
     },
     WorkHistory: {
       screen: WorkingHistoryComponent
@@ -107,7 +107,7 @@ let Drawer = DrawerNavigator(
     drawerOpenRoute: "DrawerOpen",
     drawerCloseRoute: "DrawerClose",
     drawerToggleRoute: "DrawerToggle",
-    contentComponent: CustomComponent,
+    contentComponent: CustomComponent ,
     contentOptions: {
       activeTintColor: "#00C99D",
       iconContainerStyle: {
@@ -136,6 +136,6 @@ export default class Main extends Component {
     };
   }
   render() {
-    return <Drawer info={this.state} />;
+    return <Drawer screenProps={{screenName: (name) => this.props.screenName(name)}}/>;
   }
 }

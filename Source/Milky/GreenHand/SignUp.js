@@ -16,44 +16,85 @@ export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: "",
       user: "",
       password: "",
+      comfirm: "",
       isCommit: false
     };
   }
-  login = () => {
-    this.setState({
-      isCommit: true,
-    }, () => {
-      setTimeout(() => {
-        let user = this.state.user;
-        let password = this.state.password;
-        if (user === "chienvu123") {
-          if (password == "123123") {
-            this.setState({
-              isCommit: false
-            }, () => setTimeout(() => {
-              this.props.isActive(false, false);
-            }, 150));
-            
+  signup = () => {
+    this.setState(
+      {
+        isCommit: true
+      },
+      () => {
+        setTimeout(() => {
+          let user = this.state.user;
+          let password = this.state.password;
+          let comfirm = this.state.comfirm;
+          let name = this.state.name;
+          if (user != "") {
+            if (password != comfirm) {
+              if (user != "chienvu123") {
+                this.setState(
+                  {
+                    isCommit: false
+                  },
+                  () => {
+                    alert("Đăng ký thành công");
+                    setTimeout(() => {
+                      this.props.loginScreen();
+                    }, 50);
+                  }
+                );
+              } else {
+                this.setState(
+                  {
+                    isCommit: false
+                  },
+                  () => {
+                    alert("Tài khoản đã tồn tại");
+                  }
+                );
+              }
+            } else {
+              this.setState(
+                {
+                  isCommit: false
+                },
+                () => {
+                  alert("Xác nhận mật khẩu không trùng!");
+                }
+              );
+            }
           } else {
-            alert("Bạn đã nhập sai mật khẩu!");
-            this.setState({
-              isCommit: false
-            });
+            this.setState(
+              {
+                isCommit: false
+              },
+              () => {
+                alert("Bạn không được để trống tài khoản!");
+              }
+            );
           }
-        } else {
-          alert("Tài khoản không tồn tại!");
-          this.setState({
-            isCommit: false
-          });
-        }
-      }, 2000);
-    });
+        }, 2000);
+      }
+    );
   };
   changeUser = value => {
     this.setState({
       user: value
+    });
+  };
+  changeName = value => {
+    this.setState({
+      name: value
+    });
+  };
+  changeComfirm = value => {
+    this.setState({
+      comfirm: value
     });
   };
   changePassword = value => {
@@ -83,7 +124,7 @@ export default class SignUp extends Component {
                 underlineColorAndroid="transparent"
                 returnKeyType="next"
                 style={styles.input}
-                onChangeText={this.changeUser}
+                onChangeText={this.changeName}
               />
             </View>
             <View style={styles.vInput}>
@@ -110,6 +151,7 @@ export default class SignUp extends Component {
                 secureTextEntry
                 style={styles.input}
                 onChangeText={this.changePassword}
+                returnKeyType="next"
               />
             </View>
             <View style={styles.vInput}>
@@ -121,11 +163,12 @@ export default class SignUp extends Component {
                 placeholderTextColor="#90a4ae"
                 underlineColorAndroid="transparent"
                 secureTextEntry
+                returnKeyType="done"
                 style={styles.input}
-                onChangeText={this.changePassword}
+                onChangeText={this.changeComfirm}
               />
             </View>
-            <TouchableHighlight style={styles.btn} onPress={this.login}>
+            <TouchableHighlight style={styles.btn} onPress={this.signup}>
               {this.state.isCommit ? (
                 <ActivityIndicator size="large" color="white" />
               ) : (
@@ -150,7 +193,7 @@ export default class SignUp extends Component {
           </Text>
           <TouchableHighlight
             style={{ alignItems: "center", marginBottom: 5, paddingBottom: 10 }}
-            onPress={() => this.props.navigation.navigate('Login')}
+            onPress={() => this.props.loginScreen()}
           >
             <Text
               style={{
@@ -181,13 +224,12 @@ const styles = StyleSheet.create({
     flex: 2,
     alignItems: "center",
     paddingTop: 20,
-    height: 400,
     zIndex: 2,
     marginBottom: 10
   },
   vContext: {
-    height: 100,
-    justifyContent: "flex-end"
+    height: 50,
+    marginTop: 20
   },
   logo: {
     fontSize: 33,
@@ -228,6 +270,6 @@ const styles = StyleSheet.create({
     width: "80%",
     backgroundColor: "#00C99D",
     justifyContent: "center",
-    marginBottom: 10,
+    marginBottom: 10
   }
 });

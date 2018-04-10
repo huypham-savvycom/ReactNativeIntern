@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TouchableOpacity, Image, Animated, ActivityIndicator } from "react-native";
-import {StackNavigator} from 'react-navigation'
+import {StackNavigator} from 'react-navigation';
 let interval;
 export default class WelcomeCopy extends Component {
   constructor(props) {
@@ -39,7 +39,8 @@ export default class WelcomeCopy extends Component {
     }, 450);
     setTimeout(() => {
       clearInterval(interval);
-      this.props.isActive(false, true);
+      this.props.screenName('Login');
+      //this.props.navigation.navigate('Login');
     }, 2250);
   }
   render() {
